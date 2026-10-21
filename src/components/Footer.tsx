@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { Logo } from './Logo'
 import { navItems } from './Header'
+import { useLang, type Bilingual } from '@/i18n'
 
 export function Footer() {
   return (
