@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss" source("../");
+
+@theme {
+  --color-cyan-brand: #00bcd4;
+  --color-blue-brand: #0066ff;
+  --color-ink: #0b1220;
+  --color-ink-soft: #4a5568;
+  --color-mist: #f3f8fc;
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Brand gradient used by the logo, buttons, and accents */
+.bg-brand {
+  background-image: linear-gradient(135deg, #00bcd4, #0066ff);
+}
+
+.text-brand {
+  background-image: linear-gradient(135deg, #00bcd4, #0066ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Nav buttons: neutral at rest, brand gradient on hover and when active */
+.nav-btn {
+  position: relative;
+  border-radius: 9999px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  transition: color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  isolation: isolate;
+}
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: linear-gradient(135deg, #00bcd4, #0066ff);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+.nav-btn:hover,
+.nav-btn:focus-visible,
+.nav-btn.active {
+  color: #ffffff;
+  box-shadow: 0 6px 18px -6px rgba(0, 102, 255, 0.55);
+}
+.nav-btn:hover::before,
+.nav-btn:focus-visible::before,
+.nav-btn.active::before {
+  opacity: 1;
+}
+.nav-btn:focus-visible {
+  outline: 2px solid #0066ff;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background-image: linear-gradient(135deg, #00bcd4, #0066ff);
+  box-shadow: 0 10px 24px -10px rgba(0, 102, 255, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -10px rgba(0, 102, 255, 0.8);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  border: 1.5px solid #d6e2ee;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: #0066ff;
+  color: #0066ff;
+}
+
+.grid-glow {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(0, 188, 212, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 10%, rgba(0, 102, 255, 0.16), transparent 40%),
+    linear-gradient(rgba(11, 18, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 18, 32, 0.04) 1px, transparent 1px);
+  background-size: auto, auto, 40px 40px, 40px 40px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
