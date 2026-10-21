@@ -1,9 +1,10 @@
 import { Link } from '@tanstack/react-router'
 import { Logo } from './Logo'
 import { navItems } from './Header'
-import { useLang, type Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 
 export function Footer() {
+  const { t, pick } = useLang()
   return (
     <footer className="bg-ink text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[2fr_1fr_1fr]">
