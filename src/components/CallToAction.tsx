@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
-import { useLang, type Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 import { LanguageToggle } from './LanguageToggle'
 
 export function CallToAction() {
