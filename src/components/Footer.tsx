@@ -21,7 +21,7 @@ export function Footer() {
             {navItems.map((item) => (
               <li key={item.to}>
                 <Link to={item.to} className="hover:text-cyan-brand">
-                  {item.label}
+                  {pick(item.label)}
                 </Link>
               </li>
             ))}
