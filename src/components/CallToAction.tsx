@@ -9,7 +9,7 @@ export function CallToAction() {
       <div className="bg-brand relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-14 text-center text-white md:px-16">
         <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10" />
         <div className="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-white/10" />
-        <h2 className="relative text-3xl font-extrabold md:text-4xl">
+        <h2 className="relative text-3xl font-extrabold md:text-4xl"> {/* This is how to make a bilingual  */}
           {t(
             'Have a process to automate or an idea to build?',
             '¿Tiene un proceso que automatizar o una idea para construir?',
