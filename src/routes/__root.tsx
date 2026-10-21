@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { LangProvider } from '@/i18n'
 
 import '../styles.css'
 
@@ -54,9 +55,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LangProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LangProvider>
         <Scripts />
       </body>
     </html>
