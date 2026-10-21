@@ -1,7 +1,11 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowRight } from 'lucide-react'
+import { useLang, type Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
+import { LanguageToggle } from './LanguageToggle'
 
 export function CallToAction() {
+  const { t, pick } = useLang()
   return (
     <section className="px-5 py-20">
       <div className="bg-brand relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] px-8 py-14 text-center text-white md:px-16">
