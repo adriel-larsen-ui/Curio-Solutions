@@ -3,6 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { Menu, X } from 'lucide-react'
 import { Logo } from './Logo'
 import { useLang, type Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 import { LanguageToggle } from './LanguageToggle'
 
 export const navItems = [
