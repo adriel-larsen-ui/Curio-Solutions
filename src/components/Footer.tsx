@@ -5,6 +5,8 @@ import { useLang } from '@/i18n'
 
 export function Footer() {
   const { t, pick } = useLang()
+  const [open, setOpen] = useState(false)
+
   return (
     <footer className="bg-ink text-slate-300">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[2fr_1fr_1fr]">
@@ -31,7 +33,7 @@ export function Footer() {
         </div>
         <div>
           <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-white">
-            Services
+            {t( 'Services','Servicios')}
           </h4>
           <ul className="space-y-2 text-sm">
             <li>Workflow Automation</li>
