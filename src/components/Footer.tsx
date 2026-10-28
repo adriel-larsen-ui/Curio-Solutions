@@ -1,4 +1,4 @@
-iimport { Link } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import { Logo } from './Logo'
 import { navItems } from './Header'
 import { useLang } from '@/i18n'
