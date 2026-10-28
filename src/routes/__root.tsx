@@ -12,6 +12,7 @@ const siteDescription =
 export const Route = createRootRoute({
   head: () => ({
     meta: [
+      { name: 'google', content: 'notranslate' }, // Makes it so google doesn't translate.
       {
         charSet: 'utf-8',
       },
@@ -50,7 +51,7 @@ export const Route = createRootRoute({
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" translate="no">
       <head>
         <HeadContent />
       </head>
