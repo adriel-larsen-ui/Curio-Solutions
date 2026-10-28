@@ -11,16 +11,13 @@ export const Route = createFileRoute('/services')({
 })
 
 function ServicesPage() {
+  const { t, pick } = useLang()
   return (
     <>
       <PageHeader
-        eyebrow="Services"
-        title={
-          <>
-            Everything you need to <span className="text-brand">work smarter</span>
-          </>
-        }
-        intro="From automating everyday tasks to launching a brand-new website or app, we partner with you end to end."
+        eyebrow={t("Services", "Servicios")}
+        title={<>{t("Everything you need to", "Todo lo que necesita para")} <span className="text-brand">{t("work smarter", "trabajar inteligentemente")}</span></>}
+        intro={t("From automating everyday tasks to launching a brand-new website or app, we partner with you end to end.", "Desde automatizar tareas cotidianas al desarrollo de un website personalizado o una aplicacion, te acompañamos todo el trayecto.")}
       />
 
       <div className="mx-auto max-w-6xl space-y-8 px-5 py-20">
