@@ -36,7 +36,7 @@ function ServicesPage() {
               <p className="text-brand mt-2 text-lg font-bold">{s.tagline}</p>
               <p className="mt-4 leading-relaxed text-ink-soft">{s.description}</p>
               <Link to="/contact" className="btn-primary mt-8">
-                Discuss your project <ArrowRight size={16} />
+                {t('Discuss your project', 'Hablemos de su proyecto')} <ArrowRight size={16} />
               </Link>
             </div>
             <ul className="space-y-3 self-center rounded-3xl bg-mist p-7">
