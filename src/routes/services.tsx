@@ -41,7 +41,8 @@ function ServicesPage() {
                 <ServiceIcon kind={s.icon} />
                 <span className="font-display text-sm font-bold text-ink-soft">0{i + 1}</span>
               </div>
-              <h2 className="mt-6 text-3xl font-extrabold">{s.title}</h2>
+              <h2 className="mt-6 text-3xl font-extrabold">{pick(s.title)}</h2>
+              {s.features.map((f) => <li>{pick(f)}</li>)}
               <p className="text-brand mt-2 text-lg font-bold">{s.tagline}</p>
               <p className="mt-4 leading-relaxed text-ink-soft">{s.description}</p>
               <Link to="/contact" className="btn-primary mt-8">
