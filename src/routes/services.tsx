@@ -4,6 +4,15 @@ import services from '@/data/services'
 import { PageHeader } from '@/components/PageHeader'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { CallToAction } from '@/components/CallToAction'
+import type { Bilingual } from '@/i18n'
+export interface Service {
+  id: string
+  icon: ServiceIcon
+  title: Bilingual
+  tagline: Bilingual
+  description: Bilingual
+  features: Array<Bilingual>
+}
 
 export const Route = createFileRoute('/services')({
   head: () => ({ meta: [{ title: 'Services — Curio Solutions' }] }),
