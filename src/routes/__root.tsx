@@ -12,14 +12,9 @@ const siteDescription =
 export const Route = createRootRoute({
   head: () => ({
     meta: [
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google', content: 'notranslate' }, // Makes it so google doesn't translate.
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
       {
         title: siteName,
       },
