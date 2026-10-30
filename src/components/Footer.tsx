@@ -13,8 +13,8 @@ export function Footer() {
           <Logo light />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
             {t(
-              en, 'Workflow automation, custom websites, and personalized applications for businesses that want technology to work the way they do.',
-              es, 'Automatización de procesos, sitios web a medida y aplicaciones personalizadas para empresas que quieren que la tecnología trabaje como ellas.',
+              'Workflow automation, custom websites, and personalized applications for businesses that want technology to work the way they do.',
+              'Automatización de procesos, sitios web a medida y aplicaciones personalizadas para empresas que quieren que la tecnología trabaje como ellas.'
             )}
           </p>
         </div>
