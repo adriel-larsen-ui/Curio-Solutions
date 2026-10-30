@@ -18,7 +18,6 @@ export function Header() {
   const { t, pick } = useLang()
 
   return (
-    <meta name="google" content="notranslate" />
     <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
         <Link to="/" aria-label="Curio Solutions home" onClick={() => setOpen(false)}>
