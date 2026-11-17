@@ -47,7 +47,7 @@ const services: Array<Service> = [
       { en: 'Brand-aligned visual design', es: 'Diseño visual alineado con su marca' },
       { en: 'Responsive, accessible, SEO-ready builds', es: 'Sitios adaptables, accesibles y optimizados para SEO' },
       { en: 'Content management you can update yourself', es: 'Gestión de contenido que usted mismo puede actualizar' },
-      { en: 'Hosting, analytics & performance tuning', es: 'Alojamiento, analítica y optimización del rendimiento' },
+      { en: 'Hosting, analytics & performance tuning', es: 'Hosting, analítica y optimización del rendimiento' },
     ],
   },
   {
@@ -59,8 +59,8 @@ const services: Array<Service> = [
       es: 'Software moldeado a su forma de trabajar.',
     },
     description: {
-      en: 'When off-the-shelf software doesn’t fit, we design and develop web and mobile applications built specifically for your workflow, customers, and goals.',
-      es: 'Cuando el software estándar no se ajusta, diseñamos y desarrollamos aplicaciones web y móviles creadas específicamente para su flujo de trabajo, sus clientes y sus objetivos.',
+      en: 'When off-the-shelf software doesn’t fit your needs, we design and develop web and mobile applications built specifically for your workflow, customers, and goals.',
+      es: 'Cuando el software estándar no se ajusta a sus necesidades, diseñamos y desarrollamos aplicaciones web y móviles creadas específicamente para su flujo de trabajo, sus clientes y sus objetivos.',
     },
     features: [
       { en: 'Discovery workshops & prototyping', es: 'Talleres de descubrimiento y prototipado' },
