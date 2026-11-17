@@ -83,9 +83,9 @@ export function ContactForm() {
           {t('I’m interested in:', 'Estoy en busca de:')}
           <select name="service" className={fieldClass} defaultValue="Workflow Automation">
             <option value="Workflow automation">{t('Workflow automation', 'Automatización de flujo laboral')}</option>
-            <option value="Custom website design">{t('Custom website design', 'Automatización de Flujo Laboral')}</option>
-            <option value="Personalized application">{t('Personalized application', 'Automatización de Flujo Laboral')}</option>
-            <option value="More than one or not sure yet">{t('More than one or not sure yet', 'Automatización de Flujo Laboral')}</option>
+            <option value="Custom website design">{t('Custom website design', 'Diseño de sitio web personalizado')}</option>
+            <option value="Personalized application">{t('Application development', 'Desarrollo de aplicaciones')}</option>
+            <option value="More than one or not sure yet">{t('More than one or not sure yet', 'Más de un servicio o no está seguro')}</option>
           </select>
         </label>
         <label className="text-sm font-semibold md:col-span-2">
