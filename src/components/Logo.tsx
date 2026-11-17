@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { useLang, type Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 
 export function LogoMark({ size = 40 }: { size?: number }) {
   const id = useId()
@@ -25,14 +25,16 @@ export function LogoMark({ size = 40 }: { size?: number }) {
 }
 
 export function Logo({ light = false }: { light?: boolean }) {
-  const { t, pick } = useLang()
+  const { t } = useLang()
   
   return (
     <span className="flex items-center gap-2.5">
       <LogoMark />
       <span className="font-display text-xl font-extrabold leading-none tracking-tight">
         <span className="text-brand">Curio</span>{' '}
-        <span className={light ? 'text-white' : 'text-ink' (t('Solutions', 'Soluciones'))}>Solutions</span>
+        <span className={light ? 'text-white' : 'text-ink'}>
+          {t('Solutions', 'Soluciones')}
+        </span>
       </span>
     </span>
   )
