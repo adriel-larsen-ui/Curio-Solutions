@@ -22,7 +22,7 @@ function ServicesPage() {
       />
 
       <div className="mx-auto max-w-6xl space-y-8 px-5 py-20">
-        {services.map((s, i) => (
+        {services.map((s) => (
           <section
             key={s.id}
             id={s.id}
@@ -31,7 +31,7 @@ function ServicesPage() {
             <div>
               <div className="flex items-center gap-4">
                 <ServiceIcon kind={s.icon} />
-                <span className="font-display text-sm font-bold text-ink-soft">0{i + 1}</span>
+                <span className="font-display text-sm font-bold uppercase tracking-wider text-ink-soft">{pick(s.id)}</span> {/* sis the current service in the .map, so s.id gives automation, web-design or applications. Since i is no longer used, change services.map((s, i) => ( to services.map((s) => (. Otherwise TypeScript may warn about an unused variable */}
               </div>
               <h2 className="mt-6 text-3xl font-extrabold">{pick(s.title)}</h2>
               <p className="text-brand mt-2 text-lg font-bold">{pick(s.tagline)}</p>
