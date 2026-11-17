@@ -4,7 +4,7 @@ import services from '@/data/services'
 import { PageHeader } from '@/components/PageHeader'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { CallToAction } from '@/components/CallToAction'
-import type { Bilingual } from '@/i18n'
+import type { useLang } from '@/i18n'
 export interface Service {
   id: string
   icon: ServiceIcon
