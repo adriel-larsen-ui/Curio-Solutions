@@ -41,7 +41,7 @@ export function ContactForm() {
           <CheckCircle2 size={28} />
         </span>
         <h3 className="mt-5 text-2xl font-bold">
-          {t('Thank you, we have received your message and will contact you promptly!', 'Muchas Gracias, hemos recivido su mensaje y nos pondremos en contacto a la brevedad!')</h3>
+          {t('Thank you, we have received your message and will contact you promptly!', 'Muchas Gracias, hemos recivido su mensaje y nos pondremos en contacto a la brevedad!')}</h3>
         <p className="mt-2 text-ink-soft">We’ll get back to you within one business day.</p>
         <button type="button" className="btn-ghost mt-6" onClick={() => setState('idle')}>
           Send another message
