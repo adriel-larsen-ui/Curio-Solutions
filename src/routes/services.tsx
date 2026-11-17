@@ -18,7 +18,7 @@ function ServicesPage() {
       <PageHeader
         eyebrow={t("Services", "Servicios")}
         title={<>{t("Everything you need to", "Todo lo que necesita para")} <span className="text-brand">{t("work smarter", "trabajar inteligentemente")}</span></>}
-        intro={t("From automating everyday tasks to launching a brand-new website or app, we partner with you end to end.", "Desde automatizar tareas cotidianas al desarrollo de un website personalizado o una aplicacion, te acompañamos todo el trayecto.")}
+        intro={t("From automating everyday tasks to launching a brand-new website or app, we partner with you from day one.", "Desde automatizar tareas cotidianas al desarrollo de un website personalizado o una aplicación, te acompañamos todo el trayecto.")}
       />
 
       <div className="mx-auto max-w-6xl space-y-8 px-5 py-20">
