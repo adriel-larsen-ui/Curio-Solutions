@@ -1,4 +1,5 @@
 export type ServiceIcon = 'workflow' | 'web' | 'app'
+import { useLang } from '@/i18n'
 
 export interface Service {
   id: string
