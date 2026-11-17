@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { CheckCircle2, Send } from 'lucide-react'
+import { useLang } from '@/i18n' // This imports our language change function
 
 type State = 'idle' | 'pending' | 'success' | 'error'
 
@@ -11,6 +12,7 @@ const fieldClass =
 
 export function ContactForm() {
   const [state, setState] = useState<State>('idle')
+  const { t } = useLang() // This imports the translating function from the language context component
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -38,7 +40,8 @@ export function ContactForm() {
         <span className="bg-brand mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full text-white">
           <CheckCircle2 size={28} />
         </span>
-        <h3 className="mt-5 text-2xl font-bold">Thanks — your message was received.</h3>
+        <h3 className="mt-5 text-2xl font-bold">
+          {t('Thank you, we have received your message and will contact you promptly!', 'Muchas Gracias, hemos recivido su mensaje y nos pondremos en contacto a la brevedad!')</h3>
         <p className="mt-2 text-ink-soft">We’ll get back to you within one business day.</p>
         <button type="button" className="btn-ghost mt-6" onClick={() => setState('idle')}>
           Send another message
@@ -64,7 +67,7 @@ export function ContactForm() {
       <fieldset disabled={state === 'pending'} className="grid gap-5 md:grid-cols-2">
         <legend className="sr-only">Contact details</legend>
         <label className="text-sm font-semibold">
-          Name
+          {t('Name', 'Nombre')}
           <input name="name" autoComplete="name" required maxLength={100} className={fieldClass} />
         </label>
         <label className="text-sm font-semibold">
