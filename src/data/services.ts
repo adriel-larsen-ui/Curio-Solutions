@@ -47,7 +47,7 @@ const services: Array<Service> = [
       { en: 'Brand-aligned visual design', es: 'Diseño visual alineado con su marca' },
       { en: 'Responsive, accessible, SEO-ready builds', es: 'Sitios adaptables, accesibles y optimizados para SEO' },
       { en: 'Content management you can update yourself', es: 'Gestión de contenido que usted mismo puede actualizar' },
-      { en: 'Hosting, analytics & performance tuning', es: 'Hosting, analítica y optimización del rendimiento' },
+      { en: 'Hosting, analytics & performance tuning', es: 'Hosting, analíticos y optimización del rendimiento' },
     ],
   },
   {
