@@ -5,8 +5,8 @@ const icons = { workflow: Workflow, web: MonitorSmartphone, app: AppWindow }
 
 const colors: Record<Kind, string> = {
   workflow: 'bg-gradient-to-br from-amber-400 to-orange-600 shadow-blue-500/25',
-  web: 'bg-gradient-to-br from-violet-500 to-fuchsia-600 shadow-violet-500/25',
-  app: 'bg-gradient-to-br from-cyan-400 to-blue-600 shadow-orange-500/25',
+  web: 'bg-gradient-to-br from-cyan-400 to-blue-600 shadow-orange-500/25',
+  app: 'bg-gradient-to-br from-violet-500 to-fuchsia-600 shadow-violet-500/25',
 }
 
 export function ServiceIcon({ kind, size = 26 }: { kind: Kind; size?: number }) {
