@@ -33,7 +33,7 @@ export function Logo({ light = false }: { light?: boolean }) {
       <span className="font-display text-xl font-extrabold leading-none tracking-tight">
         <span className="text-brand">Curio</span>{' '}
         <span className={light ? 'text-white' : 'text-ink'}>
-          {t('Solutions', 'Soluciones')}
+          Solutions
         </span>
       </span>
     </span>
