@@ -5,6 +5,7 @@ export type ServiceIcon = 'workflow' | 'web' | 'app'
 export interface Service {
   id: string
   icon: ServiceIcon
+  tag: Bilingual
   title: Bilingual
   tagline: Bilingual
   description: Bilingual
@@ -15,6 +16,7 @@ const services: Array<Service> = [
   {
     id: 'automation',
     icon: 'workflow',
+    tag: { en: 'Automation', es: 'Automatización' },
     title: { en: 'Business Workflow Automation', es: 'Automatización de procesos empresariales' },
     tagline: {
       en: 'Give your team back the hours lost to repetitive work.',
@@ -34,6 +36,7 @@ const services: Array<Service> = [
   {
     id: 'web-design',
     icon: 'web',
+    tag: { en: 'Web design', es: 'Diseño web' },
     title: { en: 'Custom Website Design', es: 'Diseño de sitios web a medida' },
     tagline: {
       en: 'A website that looks like you and works for you.',
@@ -53,6 +56,7 @@ const services: Array<Service> = [
   {
     id: 'applications',
     icon: 'app',
+    tag: { en: 'Applications', es: 'Aplicaciones' },
     title: { en: 'Personalized Applications', es: 'Aplicaciones personalizadas' },
     tagline: {
       en: 'Software shaped around the way you work.',
