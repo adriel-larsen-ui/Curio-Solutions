@@ -7,7 +7,7 @@ import { LanguageToggle } from './LanguageToggle'
 
 export const navItems = [
   { to: '/', label: { en: 'Home', es: 'Inicio' } },
-  // { to: '/projects', label: { en: 'Projects', es: 'Proyectos' } },
+  { to: '/projects', label: { en: 'Projects', es: 'Proyectos' } },
   { to: '/services', label: { en: 'Services', es: 'Servicios' } },
   { to: '/about', label: { en: 'About', es: 'Nosotros' } },
   { to: '/contact', label: { en: 'Contact', es: 'Contacto' } },
