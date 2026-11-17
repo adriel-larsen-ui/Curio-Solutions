@@ -4,6 +4,7 @@ import projects, { type ProjectCategory } from '@/data/projects'
 import { PageHeader } from '@/components/PageHeader'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
+import { useLang } from '@/i18n'
 
 export const Route = createFileRoute('/projects')({
   head: () => ({ meta: [{ title: 'Projects — Curio Solutions' }] }),
@@ -15,6 +16,7 @@ const filters: Array<'All' | ProjectCategory> = ['All', 'Automation', 'Website',
 function ProjectsPage() {
   const [filter, setFilter] = useState<(typeof filters)[number]>('All')
   const visible = filter === 'All' ? projects : projects.filter((p) => p.category === filter)
+  const { t, pick } = useLang()
 
   return (
     <>
@@ -25,7 +27,7 @@ function ProjectsPage() {
             Projects we’re <span className="text-brand">proud of</span>
           </>
         }
-        intro="A selection of automations, websites, and applications we’ve designed and built for our clients."
+        intro= {t("A selection of automations, websites, and applications we’ve designed and built for our clients.", "Una selección de automatizaciones, sitios web, y aplicaciones que hemos diseñado para nuestros clientes."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16">
@@ -38,7 +40,7 @@ function ProjectsPage() {
               onClick={() => setFilter(f)}
               className={`nav-btn border border-slate-200 ${filter === f ? 'active border-transparent' : ''}`}
             >
-              {f}
+              {pick(f)}
             </button>
           ))}
         </div>
