@@ -4,15 +4,7 @@ import services from '@/data/services'
 import { PageHeader } from '@/components/PageHeader'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { CallToAction } from '@/components/CallToAction'
-import type { useLang } from '@/i18n'
-export interface Service {
-  id: string
-  icon: ServiceIcon
-  title: Bilingual
-  tagline: Bilingual
-  description: Bilingual
-  features: Array<Bilingual>
-}
+import { useLang } from '@/i18n'
 
 export const Route = createFileRoute('/services')({
   head: () => ({ meta: [{ title: 'Services — Curio Solutions' }] }),
@@ -42,20 +34,19 @@ function ServicesPage() {
                 <span className="font-display text-sm font-bold text-ink-soft">0{i + 1}</span>
               </div>
               <h2 className="mt-6 text-3xl font-extrabold">{pick(s.title)}</h2>
-              {s.features.map((f) => <li>{pick(f)}</li>)}
-              <p className="text-brand mt-2 text-lg font-bold">{s.tagline}</p>
-              <p className="mt-4 leading-relaxed text-ink-soft">{s.description}</p>
+              <p className="text-brand mt-2 text-lg font-bold">{pick(s.tagline)}</p>
+              <p className="mt-4 leading-relaxed text-ink-soft">{pick(s.description)}</p>
               <Link to="/contact" className="btn-primary mt-8">
                 {t('Discuss your project', 'Hablemos de su proyecto')} <ArrowRight size={16} />
               </Link>
             </div>
             <ul className="space-y-3 self-center rounded-3xl bg-mist p-7">
               {s.features.map((f) => (
-                <li key={f} className="flex items-start gap-3 font-medium">
+                <li key={f.en} className="flex items-start gap-3 font-medium">
                   <span className="bg-brand mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white">
                     <Check size={14} strokeWidth={3} />
                   </span>
-                  {f}
+                  {pick(f)}
                 </li>
               ))}
             </ul>
