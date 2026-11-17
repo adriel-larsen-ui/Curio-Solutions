@@ -5,6 +5,7 @@ import projects from '@/data/projects'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
+import { useLang } from '@/i18n'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -19,7 +20,8 @@ const steps = [
 
 function Home() {
   const featured = projects.filter((p) => p.featured).slice(0, 3)
-
+  const { t, pick } = useLang()
+  
   return (
     <>
       {/* Hero */}
@@ -102,10 +104,10 @@ function Home() {
               className="group rounded-3xl border border-slate-200 bg-white p-8 transition hover:-translate-y-1 hover:border-transparent hover:shadow-xl hover:shadow-blue-500/10"
             >
               <ServiceIcon kind={s.icon} />
-              <h3 className="mt-6 text-xl font-bold">{s.title}</h3>
-              <p className="mt-3 leading-relaxed text-ink-soft">{s.tagline}</p>
+              <h3 className="mt-6 text-xl font-bold">{pick(s.title)}</h3>
+              <p className="mt-3 leading-relaxed text-ink-soft">{pick(s.tagline)}</p>
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-blue-brand">
-                Learn more <ArrowRight size={15} className="transition group-hover:translate-x-1" />
+                {t('Learn more', 'Más información')} <ArrowRight size={15} className="transition group-hover:translate-x-1" />
               </span>
             </Link>
           ))}
