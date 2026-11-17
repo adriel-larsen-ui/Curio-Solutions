@@ -41,10 +41,11 @@ export function ContactForm() {
           <CheckCircle2 size={28} />
         </span>
         <h3 className="mt-5 text-2xl font-bold">
-          {t('Thank you, we have received your message and will contact you promptly!', 'Muchas Gracias, hemos recivido su mensaje y nos pondremos en contacto a la brevedad!')}</h3>
-        <p className="mt-2 text-ink-soft">We’ll get back to you within one business day.</p>
+          {t('Thank you, we have received your message and will contact you promptly!', '¡Muchas gracias! Hemos recibido su mensaje y nos pondremos en contacto a la brevedad.')}
+        </h3>
+        <p className="mt-2 text-ink-soft">{t('We’ll get back to you within one business day.', 'Le responderemos dentro de un día hábil.')}</p>
         <button type="button" className="btn-ghost mt-6" onClick={() => setState('idle')}>
-          Send another message
+          {t('Send another message', 'Enviar otro mensaje')}
         </button>
       </div>
     )
@@ -75,31 +76,31 @@ export function ContactForm() {
           <input name="email" type="email" autoComplete="email" required maxLength={254} className={fieldClass} />
         </label>
         <label className="text-sm font-semibold">
-          Company <span className="font-normal text-ink-soft">(optional)</span>
+          {t('Company', 'Empresa')} <span className="font-normal text-ink-soft">{t('(optional)', '(opcional)')}</span>
           <input name="company" autoComplete="organization" maxLength={120} className={fieldClass} />
         </label>
         <label className="text-sm font-semibold">
-          I’m interested in
+          {t('I’m interested in:', 'Estoy en busca de:')}
           <select name="service" className={fieldClass} defaultValue="Workflow Automation">
-            <option>Workflow Automation</option>
-            <option>Custom Website Design</option>
-            <option>Personalized Application</option>
-            <option>Not sure yet</option>
+            <option value="Workflow automation">{t('Workflow automation', 'Automatización de flujo laboral')}</option>
+            <option value="Custom website design">{t('Custom website design', 'Automatización de Flujo Laboral')}</option>
+            <option value="Personalized application">{t('Personalized application', 'Automatización de Flujo Laboral')}</option>
+            <option value="More than one or not sure yet">{t('More than one or not sure yet', 'Automatización de Flujo Laboral')}</option>
           </select>
         </label>
         <label className="text-sm font-semibold md:col-span-2">
-          Tell us about your project
+          {t('Tell us about your project', 'Cuéntenos sobre su proyecto')}
           <textarea name="message" required maxLength={2000} rows={5} className={fieldClass} />
         </label>
         <div className="md:col-span-2">
           <button type="submit" className="btn-primary disabled:opacity-60">
-            {state === 'pending' ? 'Sending…' : 'Send message...'} <Send size={16} />
+            {state === 'pending' ? t('Sending…', 'Enviando…') : t('Send message', 'Enviar mensaje')} <Send size={16} />
           </button>
         </div>
       </fieldset>
       {state === 'error' && (
         <p role="alert" className="mt-5 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">
-          Your message couldn’t be confirmed as sent. Your details are still here — please try again in a moment.
+          {t('Your message couldn’t be confirmed as sent. Your details are still here — please try again in a moment.', 'No pudimos confirmar el envío de su mensaje. Sus datos siguen aquí; por favor, intente nuevamente en unos instantes.')}
         </p>
       )}
     </form>
