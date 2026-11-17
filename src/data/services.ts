@@ -1,10 +1,10 @@
 export type ServiceIcon = 'workflow' | 'web' | 'app'
-import { useLang } from '@/i18n'
+import { useLang, Bilingual } from '@/i18n'
 
 export interface Service {
   id: string
   icon: ServiceIcon
-  title: string
+  title: Bilingual
   tagline: string
   description: string
   features: Array<string>
@@ -14,10 +14,10 @@ const services: Array<Service> = [
   {
     id: 'automation',
     icon: 'workflow',
-    title: 'Business Workflow Automation',
-    tagline: 'Give your team back the hours lost to repetitive work.',
+    title: { en: 'Business Workflow Automation', es: 'Automatizacion de Flujo Laboral'},
+    tagline: { en: 'Give your team back the hours lost to repetitive work.', en: 'Devuélvale a su equipo las horas perdidas durante trabajo repetitivo'},
     description:
-      'We map how work actually moves through your business, then connect your tools so data flows on its own — from lead intake and invoicing to reporting and approvals.',
+    { en: 'We map how work actually gets done through your business, then connect your tools so data flows on its own — lead intake, invoicing, reporting, and more!.', es: 'Mapeamos como el trabajo se hacen en su negocio, y lo conectamos con las herramientas que necesita para automatizarlo — admisión de clientes, recibos, reportes, y más!'
     features: [
       'Process mapping & bottleneck analysis',
       'Integrations between CRMs, spreadsheets, email & accounting',
