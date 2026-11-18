@@ -11,6 +11,7 @@ export const Route = createFileRoute('/')({
   component: Home,
 })
 
+const { t, pick } = useLang()
 const steps = [
   { title: 'Discover', text: t('We learn how your business runs today and where time and money leak out.', 'Aprendemos como funciona tu negocio hoy por hoy, y encontramos donde pierdes tiempo y dinero.') },
   { title: 'Design', text: t('We sketch the workflow, site, or app with you — we listen to your needs before a line of code is written.', 'Trazamos los flujos laborales, tu sitio web y aplicaciones juntos — escuchamos sus necesidades antes de escribir ningun codigo.') }, 
