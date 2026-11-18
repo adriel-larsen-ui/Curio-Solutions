@@ -5,18 +5,41 @@ import projects from '@/data/projects'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
-import { useLang } from '@/i18n'
+import { useLang, Bilingual } from '@/i18n'
 
 export const Route = createFileRoute('/')({
   component: Home,
 })
 
-const { t, pick } = useLang()
 const steps = [
-  { title: 'Discover', text: t('We learn how your business runs today and where time and money leak out.', 'Aprendemos como funciona tu negocio hoy por hoy, y encontramos donde pierdes tiempo y dinero.') },
-  { title: 'Design', text: t('We sketch the workflow, site, or app with you — we listen to your needs before a line of code is written.', 'Trazamos los flujos laborales, tu sitio web y aplicaciones juntos — escuchamos sus necesidades antes de escribir ningun codigo.') }, 
-  { title: 'Build', text: t('We develop in short, visible iterations so you can steer as it comes together.', 'LLevamos a cabo nuestro proceso de desarollo en fracciones rápidas y visibles para que usted pueda reveer el paso a paso.') },
-  { title: 'Support', text: t('We launch, train your team, and stay on to keep everything exceeds your expectations.', 'Inicializamos su nuevo stack informatico, entrenamos a su equipo, y permanecemos a una llamada de distancia para asegurarnos que todo exceda sus espectativas.') },
+  {
+    title: { en: 'Discover', es: 'Descubrir' },
+    text: {
+      en: 'We learn how your business runs today and where time and money leak out.',
+      es: 'Analizamos cómo funciona hoy su negocio y detectamos dónde se pierden tiempo y dinero.',
+    },
+  },
+  {
+    title: { en: 'Design', es: 'Diseñar' },
+    text: {
+      en: 'We sketch the workflow, site, or app with you. We listen to your needs before a line of code is written.',
+      es: 'Diseñamos junto a usted el flujo de trabajo, el sitio o la aplicación. Escuchamos sus necesidades antes de escribir una sola línea de código.',
+    },
+  },
+  {
+    title: { en: 'Build', es: 'Desarrollar' },
+    text: {
+      en: 'We develop in short, visible iterations so you can steer as it comes together.',
+      es: 'Desarrollamos en etapas cortas y visibles para que usted pueda seguir y orientar el avance paso a paso.',
+    },
+  },
+  {
+    title: { en: 'Support', es: 'Acompañar' },
+    text: {
+      en: 'We launch, train your team, and stay on to make sure everything exceeds your expectations.',
+      es: 'Lanzamos, capacitamos a su equipo y seguimos a su disposición para asegurarnos de que todo supere sus expectativas.',
+    },
+  },
 ]
 
 function Home() {
