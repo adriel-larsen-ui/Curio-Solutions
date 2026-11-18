@@ -5,17 +5,17 @@ import projects from '@/data/projects'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
-import { useLang } from '@/i18n'
+import { useLang, Bilingual } from '@/i18n'
 
 export const Route = createFileRoute('/')({
   component: Home,
 })
 
 const steps = [
-  { title: 'Discover', text: 'We learn how your business runs today and where time and money leak out.' },
-  { title: 'Design', text: 'We sketch the workflow, site, or app with you — before a line of code is written.' },
-  { title: 'Build', text: 'We develop in short, visible iterations so you can steer as it comes together.' },
-  { title: 'Support', text: 'We launch, train your team, and stay on to keep everything running smoothly.' },
+  { title: 'Discover', text: (en: 'We learn how your business runs today and where time and money leak out.', es: 'Aprendemos como funciona tu negocio hoy por hoy, y encontramos donde pierdes tiempo y dinero.') },
+  { title: 'Design', text: (en: 'We sketch the workflow, site, or app with you — we listen to your needs before a line of code is written.', es: 'Trazamos los flujos laborales, tu sitio web y aplicaciones juntos — escuchamos sus necesidades antes de escribir ningun codigo.') },
+  { title: 'Build', text: (en: 'We develop in short, visible iterations so you can steer as it comes together.', es: 'LLevamos a cabo nuestro proceso de desarollo en fracciones rápidas y visibles para que usted pueda reveer el paso a paso.' },
+  { title: 'Support', text: (en: 'We launch, train your team, and stay on to keep everything exceeds your expectations.', es: 'Inicializamos su nuevo stack informatico, entrenamos a su equipo, y permanecemos a una llamada de distancia para asegurarnos que todo exceda sus espectativas.') },
 ]
 
 function Home() {
