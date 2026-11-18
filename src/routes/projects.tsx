@@ -24,10 +24,10 @@ function ProjectsPage() {
         eyebrow="Our work"
         title={
           <>
-            Projects we’re <span className="text-brand">proud of</span>
+            {t("Projects we’re", "Proyectos que")}<span className="text-brand">{t("proud of", "nos orgullecen")}</span>
           </>
         }
-        intro= {t("A selection of automations, websites, and applications we’ve designed and built for our clients.", "Una selección de automatizaciones, sitios web, y aplicaciones que hemos diseñado para nuestros clientes."
+        intro= t("A selection of automations, websites, and applications we’ve designed and built for our clients.", "Una selección de automatizaciones, sitios web, y aplicaciones que hemos diseñado para nuestros clientes.")
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16">
