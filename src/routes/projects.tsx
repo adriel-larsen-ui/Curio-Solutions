@@ -21,13 +21,17 @@ function ProjectsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Our work"
+        eyebrow={t('Our work', 'Nuestro trabajo')}
         title={
           <>
-            {t("Projects we’re", "Proyectos que")}<span className="text-brand">{t("proud of", "nos orgullecen")}</span>
+            {t('Projects we’re', 'Proyectos que')}{' '}
+            <span className="text-brand">{t('proud of', 'nos enorgullecen')}</span>
           </>
         }
-        intro= t("A selection of automations, websites, and applications we’ve designed and built for our clients.", "Una selección de automatizaciones, sitios web, y aplicaciones que hemos diseñado para nuestros clientes.")
+        intro={t(
+          'A selection of automations, websites, and applications we’ve designed and built for our clients.',
+          'Una selección de automatizaciones, sitios web y aplicaciones que hemos diseñado y desarrollado para nuestros clientes.'
+        )}
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16">
