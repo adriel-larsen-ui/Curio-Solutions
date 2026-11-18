@@ -5,7 +5,7 @@ import projects from '@/data/projects'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
-import { useLang, Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 
 export const Route = createFileRoute('/')({
   component: Home,
