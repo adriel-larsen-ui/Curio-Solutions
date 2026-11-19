@@ -5,7 +5,7 @@ import projects from '@/data/projects'
 import { ServiceIcon } from '@/components/ServiceIcon'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CallToAction } from '@/components/CallToAction'
-import { useLang, Bilingual } from '@/i18n'
+import { useLang } from '@/i18n'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -53,26 +53,25 @@ function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-sm font-semibold text-ink-soft shadow-sm">
-              <Sparkles size={15} className="text-cyan-brand" /> Technology that fits your business
+              <Sparkles size={15} className="text-cyan-brand" /> {t('Technology that fits your business', 'Tecnología que se adapta a su negocio')}
             </p>
             <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] md:text-6xl">
-              Smarter workflows.
+              {t("Smarter workflows.", "Flujo de trabajo más inteligente.")}
               <br />
-              <span className="text-brand">Better websites.</span>
+              <span className="text-brand">{t("Better websites.", "Mejores sitios web.")}</span>
               <br />
-              Apps made for you.
+              {t("Apps made for you.", "Aplicaciones hechas para su compañía.")}
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-              Curio Solutions helps businesses automate repetitive work, launch
-              custom-designed websites, and build personalized applications —
-              so your team can focus on what matters.
+              {t("Curio Solutions helps businesses automate repetitive work, launch custom-designed websites, and build personalized applications — so your team can focus on what matters.", 
+                 "Curio Solutions ayuda negocios a automatizar tareas repetitivas, diseña sitios web personalizados y desarrolla aplicaciones personalizadas.")}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/contact" className="btn-primary">
-                Get a free consultation <ArrowRight size={18} />
+                {t("Get a free consultation!", "Consulte gratis con cualquier duda!")}<ArrowRight size={18} />
               </Link>
               <Link to="/projects" className="btn-ghost">
-                See our work
+                {t("See our work", "Vea nuesto trabajo")}
               </Link>
             </div>
           </div>
@@ -82,29 +81,34 @@ function Home() {
             <div className="bg-brand absolute -inset-6 rounded-[2.5rem] opacity-20 blur-2xl" />
             <div className="relative rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-blue-500/10">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-bold">New order workflow</span>
+                <span className="text-sm font-bold">{t('New order workflow', 'Flujo de nuevos pedidos')}</span>
                 <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-600">
-                  ● Running
+                  ● ● {t('Running', 'Operativo')}
                 </span>
               </div>
               <ol className="mt-6 space-y-3">
-                {['Order received', 'Invoice generated', 'Customer emailed', 'Books updated'].map((label, i) => (
-                  <li key={label} className="flex items-center gap-3 rounded-2xl bg-mist p-3.5">
+                {[
+                  { en: 'Order received', es: 'Pedido recibido' },
+                  { en: 'Invoice generated', es: 'Factura generada' },
+                  { en: 'Customer emailed', es: 'Cliente notificado por correo' },
+                  { en: 'Books updated', es: 'Contabilidad actualizada' },
+                ].map((label, i) => (
+                  <li key={label.en} className="flex items-center gap-3 rounded-2xl bg-mist p-3.5">
                     <span className="bg-brand flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white">
-                      {i + 1}
+                      {pick(label)
                     </span>
                     <span className="font-semibold">{label}</span>
-                    <span className="ml-auto text-xs font-semibold text-ink-soft">auto</span>
+                    <span className="ml-auto text-xs font-semibold text-ink-soft">{t('auto', 'auto')}</span>
                   </li>
                 ))}
               </ol>
               <div className="mt-5 grid grid-cols-2 gap-3">
                 <div className="rounded-2xl border border-slate-200 p-4">
-                  <p className="text-xs font-semibold text-ink-soft">Hours saved / week</p>
+                  <p className="text-xs font-semibold text-ink-soft">{t('Hours saved / week', 'Horas ahorradas por semana')}</p>
                   <p className="text-brand mt-1 font-display text-3xl font-extrabold">15.5</p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 p-4">
-                  <p className="text-xs font-semibold text-ink-soft">Manual steps</p>
+                  <p className="text-xs font-semibold text-ink-soft">{t('Manual steps', 'Pasos manuales')}</p>
                   <p className="mt-1 font-display text-3xl font-extrabold">0</p>
                 </div>
               </div>
@@ -116,8 +120,8 @@ function Home() {
       {/* Services */}
       <section className="mx-auto max-w-7xl px-5 py-24">
         <div className="max-w-2xl">
-          <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">What we do</p>
-          <h2 className="mt-3 text-4xl font-extrabold">Three ways we help your business grow</h2>
+          <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">{t('What we do', 'Lo qué hacemos')}</p>
+          <h2 className="mt-3 text-4xl font-extrabold">{t('Three ways we help your business grow', 'Tres formas de ayudar a crecer a su negocio')}</h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {services.map((s) => (
@@ -143,11 +147,11 @@ function Home() {
         <div className="mx-auto max-w-7xl px-5 py-24">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
-              <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">Recent work</p>
-              <h2 className="mt-3 text-4xl font-extrabold">Projects we’ve delivered</h2>
+              <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">{t('Recent work', 'Trabajos recientes')}</p>
+              <h2 className="mt-3 text-4xl font-extrabold">{t('Projects we’ve delivered', 'Proyectos que hemos entregado')}</h2>
             </div>
             <Link to="/projects" className="btn-ghost bg-white">
-              All projects <ArrowRight size={16} />
+              {t('All projects', 'Todos los proyectos')} <ArrowRight size={16} />
             </Link>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -162,21 +166,21 @@ function Home() {
       <section className="mx-auto max-w-7xl px-5 py-24">
         <div className="grid gap-14 lg:grid-cols-2">
           <div>
-            <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">Why Curio</p>
-            <h2 className="mt-3 text-4xl font-extrabold">Curious about your business, practical about technology</h2>
+            <p className="text-brand text-sm font-bold uppercase tracking-[0.2em]">{t('Why Curio', 'Por qué Curio')}</p>
+            <h2 className="mt-3 text-4xl font-extrabold">{t('Curious about your business, practical about technology', 'Curiosos por su negocio, prácticos con la tecnología')}</h2>
             <div className="mt-10 space-y-6">
               {[
-                { icon: Puzzle, title: 'Built around you', text: 'No forcing your team into rigid software. We shape the tools to your process.' },
-                { icon: Clock, title: 'Fast, visible progress', text: 'Short build cycles and regular demos keep you in the loop from day one.' },
-                { icon: ShieldCheck, title: 'Reliable for the long run', text: 'Secure, well-documented solutions with support after launch.' },
+                { icon: Puzzle, title: {en: 'Built around you', es: 'Desarrollado al rededor de su necesidad'}, text: {en: 'No forcing your team into rigid software. We shape the tools to your process.', es: 'No forzamos a su equipo a usar software rigido, cambiamos las herramientas dependiendo de su proceso.'} },
+                { icon: Clock, title: {en: 'Fast, visible progress', es: 'Progreso rápido y visible'}, text: {en: 'Short build cycles and regular demos keep you in the loop from day one.', en: 'Ciclos de desarollo cortos y demonstraciones regulares lo mantienen informado desde principio a fin'} },
+                { icon: ShieldCheck, title: {en: 'Reliable for the long run', es: 'Confiable y duradero'}, text: {en: 'Secure, well-documented solutions with support after launch.', es: 'Soluciones seguras y bien documentadas'} },
               ].map(({ icon: Icon, title, text }) => (
-                <div key={title} className="flex gap-4">
+                <div key={title.en} className="flex gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mist text-blue-brand">
                     <Icon size={22} />
                   </span>
                   <div>
-                    <h3 className="font-bold">{title}</h3>
-                    <p className="mt-1 text-ink-soft">{text}</p>
+                    <h3 className="font-bold">{pick(title)}</h3>
+                    <p className="mt-1 text-ink-soft">{pick(text)}</p>
                   </div>
                 </div>
               ))}
@@ -184,10 +188,10 @@ function Home() {
           </div>
           <ol className="grid gap-4 sm:grid-cols-2">
             {steps.map((step, i) => (
-              <li key={step.title} className="rounded-3xl border border-slate-200 p-7">
+              <li key={step.title.en} className="rounded-3xl border border-slate-200 p-7">
                 <span className="text-brand font-display text-4xl font-extrabold">0{i + 1}</span>
-                <h3 className="mt-3 text-lg font-bold">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{step.text}</p>
+                <h3 className="mt-3 text-lg font-bold">{pick(step.title)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{pick(step.text)}</p>
               </li>
             ))}
           </ol>
