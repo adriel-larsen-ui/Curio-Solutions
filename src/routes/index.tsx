@@ -170,7 +170,7 @@ function Home() {
             <h2 className="mt-3 text-4xl font-extrabold">{t('Curious about your business, practical about technology', 'Curiosos por su negocio, prácticos con la tecnología')}</h2>
             <div className="mt-10 space-y-6">
               {[
-                { icon: Puzzle, title: {en: 'Built around you', es: 'Desarrollado al rededor de su necesidad'}, text: {en: 'No forcing your team into rigid software. We shape the tools to your process.', es: 'No forzamos a su equipo a usar software rigido, cambiamos las herramientas dependiendo de su proceso.'} },
+                { icon: Puzzle, title: {en: 'Built around you', es: 'Desarrollado alrededor de su necesidad'}, text: {en: 'No forcing your team into rigid software. We shape the tools to your process.', es: 'No forzamos a su equipo a usar software rigido, cambiamos las herramientas dependiendo de su proceso.'} },
                 { icon: Clock, title: {en: 'Fast, visible progress', es: 'Progreso rápido y visible'}, text: {en: 'Short build cycles and regular demos keep you in the loop from day one.', en: 'Ciclos de desarollo cortos y demonstraciones regulares lo mantienen informado desde principio a fin'} },
                 { icon: ShieldCheck, title: {en: 'Reliable for the long run', es: 'Confiable y duradero'}, text: {en: 'Secure, well-documented solutions with support after launch.', es: 'Soluciones seguras y bien documentadas'} },
               ].map(({ icon: Icon, title, text }) => (
