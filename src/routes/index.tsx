@@ -11,40 +11,33 @@ export const Route = createFileRoute('/')({
   component: Home,
 })
 
-const steps = [
-  {
-    title: { en: 'Discover', es: 'Descubrir' },
-    text: {
-      en: 'We learn how your business runs today and where time and money leak out.',
-      es: 'Analizamos cómo funciona hoy su negocio y detectamos dónde se pierden tiempo y dinero.',
-    },
-  },
-  {
-    title: { en: 'Design', es: 'Diseñar' },
-    text: {
-      en: 'We sketch the workflow, site, or app with you. We listen to your needs before a line of code is written.',
-      es: 'Diseñamos junto a usted el flujo de trabajo, el sitio o la aplicación. Escuchamos sus necesidades antes de escribir una sola línea de código.',
-    },
-  },
-  {
-    title: { en: 'Build', es: 'Desarrollar' },
-    text: {
-      en: 'We develop in short, visible iterations so you can steer as it comes together.',
-      es: 'Desarrollamos en etapas cortas y visibles para que usted pueda seguir y orientar el avance paso a paso.',
-    },
-  },
-  {
-    title: { en: 'Support', es: 'Acompañar' },
-    text: {
-      en: 'We launch, train your team, and stay on to make sure everything exceeds your expectations.',
-      es: 'Lanzamos, capacitamos a su equipo y seguimos a su disposición para asegurarnos de que todo supere sus expectativas.',
-    },
-  },
-]
-
 function Home() {
   const featured = projects.filter((p) => p.featured).slice(0, 3)
   const { t, pick } = useLang()
+
+
+  const steps = [
+    {
+      title: t('Discover', 'Descubrir'),
+      text: t('We learn how your business runs today and where time and money leak out.', 
+              'Analizamos cómo funciona hoy su negocio y detectamos dónde se pierden tiempo y dinero.'),
+    },
+    {
+      title: t('Design', 'Diseñar'),
+      text: t('We sketch the workflow, site, or app with you. We listen to your needs before a line of code is written.', 
+              'Diseñamos junto a usted el flujo de trabajo, el sitio o la aplicación. Escuchamos sus necesidades antes de escribir una sola línea de código.'),
+    },
+    {
+      title: t('Build', 'Desarrollar'),
+      text: t('We develop in short, visible iterations so you can steer as it comes together.', 
+              'Desarrollamos en etapas cortas y visibles para que usted pueda seguir y orientar el avance paso a paso.'),
+    },
+    {
+      title: t('Support', es: 'Acompañar'),
+      text: t('We launch, train your team, and stay on to make sure everything exceeds your expectations.', 
+              'Lanzamos, capacitamos a su equipo y seguimos a su disposición para asegurarnos de que todo supere sus expectativas.'),
+    },
+  ]
   
   return (
     <>
@@ -88,10 +81,10 @@ function Home() {
               </div>
               <ol className="mt-6 space-y-3">
                 {[
-                  { en: 'Order received', es: 'Pedido recibido' },
-                  { en: 'Invoice generated', es: 'Factura generada' },
-                  { en: 'Customer emailed', es: 'Cliente notificado por correo' },
-                  { en: 'Books updated', es: 'Contabilidad actualizada' },
+                  t('Order received', 'Pedido recibido'),
+                  t('Invoice generated', 'Factura generada'),
+                  t('Customer emailed', 'Cliente notificado por correo'),
+                  t('Books updated', 'Contabilidad actualizada',
                 ].map((label, i) => (
                   <li key={label.en} className="flex items-center gap-3 rounded-2xl bg-mist p-3.5">
                     <span className="bg-brand flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white">
@@ -170,9 +163,12 @@ function Home() {
             <h2 className="mt-3 text-4xl font-extrabold">{t('Curious about your business, practical about technology', 'Curiosos por su negocio, prácticos con la tecnología')}</h2>
             <div className="mt-10 space-y-6">
               {[
-                { icon: Puzzle, title: {en: 'Built around you', es: 'Desarrollado alrededor de su necesidad'}, text: {en: 'No forcing your team into rigid software. We shape the tools to your process.', es: 'No forzamos a su equipo a usar software rigido, cambiamos las herramientas dependiendo de su proceso.'} },
-                { icon: Clock, title: {en: 'Fast, visible progress', es: 'Progreso rápido y visible'}, text: {en: 'Short build cycles and regular demos keep you in the loop from day one.', en: 'Ciclos de desarollo cortos y demonstraciones regulares lo mantienen informado desde principio a fin'} },
-                { icon: ShieldCheck, title: {en: 'Reliable for the long run', es: 'Confiable y duradero'}, text: {en: 'Secure, well-documented solutions with support after launch.', es: 'Soluciones seguras y bien documentadas'} },
+                { icon: Puzzle, title: t('Built around you', 'Desarrollado alrededor de su necesidad'), text: t('No forcing your team into rigid software. We shape the tools to your process.', 
+                                                                                                                'No forzamos a su equipo a usar software rigido, cambiamos las herramientas dependiendo de su proceso.') },
+                { icon: Clock, title: t('Fast, visible progress', 'Progreso rápido y visible'), text: t('Short build cycles and regular demos keep you in the loop from day one.', 
+                                                                                                               'Ciclos de desarollo cortos y demonstraciones regulares lo mantienen informado desde principio a fin') },
+                { icon: ShieldCheck, title: t('Reliable for the long run', 'Confiable y duradero'), text: t('Secure, well-documented solutions with support after launch.', 
+                                                                                                            'Soluciones seguras y bien documentadas') },
               ].map(({ icon: Icon, title, text }) => (
                 <div key={title.en} className="flex gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mist text-blue-brand">
